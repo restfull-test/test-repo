@@ -1,0 +1,45 @@
+{
+    "repoName": "test-repo",
+    "repoDescription": "A test repo.",
+    "framework": "sails",
+    "database": "mongo",
+    "schemas": [
+        {
+            "name": "kitchen",
+            "attributes": [
+                {
+                    "key": "cook",
+                    "type": "string",
+                    "autoIncrement": false,
+                    "unique": false,
+                    "primaryKey": false,
+                    "required": true,
+                    "collection": false
+                },
+                {
+                    "key": "food",
+                    "autoIncrement": false,
+                    "unique": false,
+                    "primaryKey": false,
+                    "required": false,
+                    "collection": "food",
+                    "via": "kitchen"
+                }
+            ]
+        },
+        {
+            "name": "food",
+            "attributes": [
+                {
+                    "key": "heat",
+                    "type": "float",
+                    "autoIncrement": false,
+                    "unique": false,
+                    "primaryKey": false,
+                    "required": false,
+                    "collection": false
+                }
+            ]
+        }
+    ]
+}
